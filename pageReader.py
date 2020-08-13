@@ -1,19 +1,28 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+f = open('website.txt', 'r')
+website = f.readline() + "2020-08-12.html"
+f.close()
+
+results = ''
+
 driver = webdriver.Chrome()
-driver.get("")
+driver.get(website)
 driver.maximize_window()
-assert "Trend Calendar" in driver.title
+button = driver.find_element_by_link_text("More")
+button.click()
 topelems = driver.find_elements_by_css_selector("ol > li > a")
 for i in range(len(topelems)):
     if topelems[i].text == "":
         break
 topelems = topelems[0:i]
+
+results = results + e for e in topelems
+
 for e in topelems:
     print(e.text)
-
-#elem.clear()
-#elem.send_keys(Keys.RETURN)
-# elem[0].click()
-assert "No results found." not in driver.page_source
+botelems = driver.find_elements_by_xpath("//ol[@id='readmore1']/li/a")
+print(len(botelems))
+for b in botelems:
+    print(b.text)
