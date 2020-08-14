@@ -12,12 +12,14 @@ class trenddb:
         self.db.commit()
     
     def add(self, trends, trenddate):
-        f = open('runningTrends.txt')
+        
         if trends is None:
             return
+        
+        f = open('runningTrends.txt', 'a')
+
         d = date(int(trenddate[:4]), int(trenddate[5:7]), int(trenddate[8:]))
         for t in trends:
-            #print(trend)
             self.db.trenddates.insert(trend=t, date=d)
-            f.append(str(d) + ": " + t)
+            f.write(str(d) + ": " + t)
         f.close()
