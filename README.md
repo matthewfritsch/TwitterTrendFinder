@@ -7,7 +7,7 @@
 - [x] **datetime** for accessing all dates on the website (formatted as "https://website.com/YYYY-MM-DD") and passing the date to the scraper.
 - [x] **selenium** for accessing the webpage and getting Trends
       (Yes, Selenium is absolutely overkill as a web scraper. Unfortunately, the website requires a button press to get the full set of data to load.)
-- [ ] **PYDAL** for storing each trend with its date and frequency. Also, PYDAL makes it easy to find if an entry contains a substring. This will be useful for finding if a topic repeats frequently. E.g: "#TrumpKillsUSPS" is trending as of today (2020/08/12), but perhaps "Trump" or "USPS" are substrings of other trends that occur frequently.
+- [x] **PYDAL** for storing each trend with its date and frequency. Also, PYDAL makes it easy to find if an entry contains a substring. This will be useful for finding if a topic repeats frequently. E.g: "#TrumpKillsUSPS" is trending as of today (2020/08/12), but perhaps "Trump" or "USPS" are substrings of other trends that occur frequently.
 - [ ] **numpy** and/or a library to visualize the data gathered. As I have never used numpy, I'm unfamiliar with if it does any kind of graphical representation of data. Will update as necessary.
 
 Note: The website being used to gather trends has two ordered lists of trends. The first is visible before the button press, and the second is not.
