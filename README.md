@@ -12,6 +12,6 @@
 
 Note: The website being used to gather trends has two ordered lists of trends. The first is visible before the button press, and the second is not.
 
-Update (8/17): In order to not spam the website with requests, I added a sleep to trendFinder. Each request will now take a total of 12 seconds.
+Update (8/17): In case the site had a check to see if a bot was moving through every date sequentially, each set of trends was gathered in random order. In order to not spam the website with requests, I added a sleep to trendFinder. Each request will now take a total of 12 seconds.
 
 Given there is a request for each day, and a 12 second delay for each day, the program completed the job in 5 hours and 32 minutes. The db is now full of all trends between Feb 1 2016 and Aug 14 2020. I will consider posting the results here when they are sorted, though I'm unsure if Twitter would have a problem with that.
