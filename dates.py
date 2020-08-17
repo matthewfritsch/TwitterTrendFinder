@@ -27,7 +27,6 @@ class dates:
             f.close()
         else:
             self.lines = len(open('datesToFind.txt', 'r').readlines( ))
-            print(self.lines)
 
     def getRandomDate(self):
         if self.lines == 0:
