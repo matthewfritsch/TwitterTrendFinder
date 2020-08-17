@@ -31,4 +31,4 @@ class pageReader:
 
         results = [t.text for t in topelems] + [b.text for b in botelems]
 
-        return results
+        return results[:50]
