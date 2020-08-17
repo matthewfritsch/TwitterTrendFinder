@@ -22,4 +22,5 @@ class trenddb:
         for t in trends:
             self.db.trenddates.insert(trend=t, date=d)
             f.write(str(d) + ": " + t)
+            f.write("\n")
         f.close()
