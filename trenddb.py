@@ -24,3 +24,10 @@ class trenddb:
             f.write(str(d) + ": " + t)
             f.write("\n")
         f.close()
+
+    def addParsed(self, trends, trenddate):
+
+        d = date(int(trenddate[:4]), int(trenddate[5:7]), int(trenddate[8:]))
+
+        for t in trends:
+            self.db.trenddates.insert(trend=t, date=d)
