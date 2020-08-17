@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
 class pageReader:
@@ -10,11 +11,15 @@ class pageReader:
     def crawl(self, site):
         self.driver.get(site)
 
-        if "404 NOT FOUND"  in self.driver.page_source:
+        if "404 NOT FOUND"  in self.driver.page_source or "No data found." in self.driver.page_source:
             return None
 
         self.driver.maximize_window()
-        button = self.driver.find_element_by_link_text("More")
+        button = ""
+        try:
+            button = self.driver.find_element_by_link_text("More")
+        except NoSuchElementException:
+            return None
         button.click()
         topelems = self.driver.find_elements_by_css_selector("ol > li > a")
         for i in range(len(topelems)):
