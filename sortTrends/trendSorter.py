@@ -64,3 +64,4 @@ with open('runningTrends.txt', 'w') as f:
             print(i.getDate() + " with " + str(len(i.getTrends())))
         for line in i.getTrends():
             f.write(i.getDate() + ': ' + line + '\n')
+t.end()
