@@ -10,6 +10,14 @@
 - [x] **PYDAL** for storing each trend with its date and frequency. Also, PYDAL makes it easy to find if an entry contains a substring. This will be useful for finding if a topic repeats frequently. E.g: "#TrumpKillsUSPS" is trending as of today (2020/08/12), but perhaps "Trump" or "USPS" are substrings of other trends that occur frequently.
 - [ ] **matplotlib/numpy** for moving the database of trends and dates into legible data, and plotting it according to its relevant statistic.
 
+	Things to plot:
+	- [x] Frequency of a word (word cloud)
+	- [ ] How the use of hashtags has changed over time (line plot)
+	- [ ] Frequency of a trend (bar graph)
+	- [ ] Most popular weekday-trends e.g 'ThrowbackThursday', etc. (multi-line plot)
+	- [ ] Top word frequencies and how recently they're used (multi-line plot)
+
+
 Results: 
 Of the 74,983 recorded trends, 37,633 have hashtags.
 Of the 74,983 recorded trends, 87 repeat more than 25 times.
