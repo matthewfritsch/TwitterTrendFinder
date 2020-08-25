@@ -178,6 +178,7 @@ for entry in db(db.trenddates).select().as_list():                              
         print(trend, "is not alpha or digit")
         continue
     splitTrend = parse(trend)
+    splitTrend = [st.lower() for st in splitTrend]
     
     for word in splitTrend:
         #print(word)
