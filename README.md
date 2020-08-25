@@ -17,7 +17,3 @@
 	- [ ] Most popular weekday-trends e.g 'ThrowbackThursday', etc. (multi-line plot)
 	- [ ] Top word frequencies and how recently they're used (multi-line plot)
 
-
-Results: 
-Of the 74,983 recorded trends, 37,633 have hashtags.
-Of the 74,983 recorded trends, 87 repeat more than 25 times.
