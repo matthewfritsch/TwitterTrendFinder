@@ -1,5 +1,4 @@
 from dbgetter import dbgetter
-from datetime import date
 class HashtagFinder:
     def __init__(self):
         self.datecount = {}
