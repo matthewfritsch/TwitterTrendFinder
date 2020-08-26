@@ -12,7 +12,7 @@
 
 	Things to plot:
 	- [x] Frequency of a word (word cloud)
-	- [ ] How the use of hashtags has changed over time (line plot)
+	- [x] How the use of hashtags has changed over time (line plot)
 	- [ ] Frequency of a trend (bar graph)
 	- [ ] Most popular weekday-trends e.g 'ThrowbackThursday', etc. (multi-line plot)
 	- [ ] Top word frequencies and how recently they're used (multi-line plot)
