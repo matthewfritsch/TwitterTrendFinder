@@ -30,7 +30,9 @@ x_vals.remove('2016q1')
 x_vals = np.array(x_vals)
 fig_1 = plt.figure(figsize=(16,9), dpi=100)
 axes_1 = fig_1.add_axes([0.1, 0.1, 0.9, 0.9])
+axes_1.set_xlabel('\"Day Of The Week\" Trend Frequency By Quarter')
 axes_1.set_ylabel('Trend Popularity')
+
 
 for i in range(len(trendFreqs)):
     tf = trendFreqs[i]
@@ -40,7 +42,6 @@ for i in range(len(trendFreqs)):
     axes_1.plot(x_vals, y_vals, label=t, linestyle='--', marker='o')
 
 axes_1.legend(loc=0)
-axes_1.set_title('"Day Of The Week" Trend Frequency By Quarter')
 plt.show()
 
 
