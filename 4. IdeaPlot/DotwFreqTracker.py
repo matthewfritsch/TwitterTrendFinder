@@ -1,9 +1,9 @@
 from dbgetter import dbgetter
-from WeekdayFreq import WeekdayFreq
+from DotwFreq import DotwFreq
 from string import punctuation
-class WeekdayFreqTracker:
+class DotwFreqTracker:
     def __init__(self):
-        self.weekdayFreqs = []
+        self.dotwFreqs = []
         self.allDates = 0
     
     def remove_punc(self, s):
@@ -18,14 +18,14 @@ class WeekdayFreqTracker:
         return s
 
     def addWDF(self, trend, date):
-        for wdf in self.weekdayFreqs:
+        for wdf in self.dotwFreqs:
             if wdf.trend == trend:
                 wdf.addDate(date)
                 return
-        self.weekdayFreqs.append(WeekdayFreq(trend, date))
+        self.dotwFreqs.append(DotwFreq(trend, date))
         
 
-    def get_weekday_freqs(self):
+    def get_dotw_freqs(self):
         mydb = dbgetter('trends')
         daysOfWeek = ['mon', 'tues', 'wednes', 'thurs', 'fri', 'satur', 'sun']
 
@@ -41,7 +41,7 @@ class WeekdayFreqTracker:
                     if day+'day' in trend:
                         self.addWDF(trend, date)
         mydb.close()
-        return self.weekdayFreqs
+        return self.dotwFreqs
 
 
     def getAllDates(self):

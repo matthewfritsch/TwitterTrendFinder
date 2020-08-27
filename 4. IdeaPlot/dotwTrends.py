@@ -1,20 +1,20 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from WeekdayFreqTracker import WeekdayFreqTracker
-from WeekdayFreq import WeekdayFreq
+from DotwFreqTracker import DotwFreqTracker
+from DotwFreq import DotwFreq
 
-wdf = WeekdayFreqTracker()
-weekdayfreqs = wdf.get_weekday_freqs()
-weekdayfreqs = sorted(weekdayfreqs, key=lambda WeekdayFreq: WeekdayFreq.freq, reverse=True)
+wdf = DotwFreqTracker()
+dotwfreqs = wdf.get_dotw_freqs()
+dotwfreqs = sorted(dotwfreqs, key=lambda DotwFreq: DotwFreq.freq, reverse=True)
 
 allDates = wdf.getAllDates()
 
 quantity = 5
 
-trends = [w.trend for w in weekdayfreqs[:quantity]]
-trendFreqs = [w.freq for w in weekdayfreqs[:quantity]]
-dateLists = [w.qtrs for w in weekdayfreqs[:quantity]]
+trends = [w.trend for w in dotwfreqs[:quantity]]
+trendFreqs = [w.freq for w in dotwfreqs[:quantity]]
+dateLists = [w.qtrs for w in dotwfreqs[:quantity]]
 
 
 #x: dates in quarters 
@@ -40,7 +40,7 @@ for i in range(len(trendFreqs)):
     axes_1.plot(x_vals, y_vals, label=t, linestyle='--', marker='o')
 
 axes_1.legend(loc=0)
-axes_1.set_title('Weekday Trend Frequency By Quarter')
+axes_1.set_title('"Day Of The Week" Trend Frequency By Quarter')
 plt.show()
 
 

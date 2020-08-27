@@ -1,4 +1,4 @@
-class WeekdayFreq:
+class DotwFreq:
     def __init__(self, trend, date):
         self.trend = trend
         self.qtrs = self.setupQtrs()
