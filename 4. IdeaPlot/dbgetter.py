@@ -25,8 +25,8 @@ class dbgetter:
             toRet.append(d.get(data))
         return toRet
 
-    def getTable(self, table):
-        return self.db(self.mydb).select().as_list()
+    def getTable(self):
+        return self.db(self.mydb).select()
     
     def close(self):
         self.db.close()
