@@ -7,7 +7,7 @@ db = DAL('sqlite://storage.db', folder=path.join('../database'))
 db.define_table('words',
     Field('word', 'string'),
     Field('freq', 'integer'),
-    Field('trends', 'list:string'))
+    Field('dates', 'list:string'))
 try:
     db.define_table('trenddates',
         Field('trend', 'text'),
@@ -180,16 +180,16 @@ for entry in db(db.trenddates).select().as_list():                              
     splitTrend = parse(trend)
     splitTrend = [st.lower() for st in splitTrend]
     
+    tdate = str(entry.get('date'))
     for word in splitTrend:
         #print(word)
-        tempTrends = [] + splitTrend                                                     #make a temporary list of words, but remove the current one
-        tempTrends.remove(word)                                                 
+        trendDates = []                                              
         if word in myWords:                                                         #if this word already exists,
             wordEntry = db(db.words.word == word).select(db.words.ALL)[0]           #just update the freq and associated words
             wordEntry.update_record(freq = wordEntry.freq+1)
-            wordEntry.update_record(trends = wordEntry.trends + tempTrends)
+            wordEntry.update_record(dates = wordEntry.dates + [tdate])
         else:                                                                       #if the word doesn't already exist
-            db.words.insert(word=word, freq=1, trends=list(tempTrends))                   #add it to the new db
+            db.words.insert(word=word, freq=1, dates=list(tdate))                   #add it to the new db
             myWords.append(word)
             count += 1
 
