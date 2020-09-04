@@ -189,7 +189,7 @@ for entry in db(db.trenddates).select().as_list():                              
             wordEntry.update_record(freq = wordEntry.freq+1)
             wordEntry.update_record(dates = wordEntry.dates + [tdate])
         else:                                                                       #if the word doesn't already exist
-            db.words.insert(word=word, freq=1, dates=list(tdate))                   #add it to the new db
+            db.words.insert(word=word, freq=1, dates=[tdate])                   #add it to the new db
             myWords.append(word)
             count += 1
 
