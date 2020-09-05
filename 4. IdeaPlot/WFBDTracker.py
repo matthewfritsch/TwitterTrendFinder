@@ -1,5 +1,6 @@
 from dbgetter import dbgetter
 from WFBD import WFBD
+from string import punctuation
 
 class WFBDTracker:
 
@@ -24,20 +25,17 @@ class WFBDTracker:
         dbg = dbgetter('words')
         wordTable = dbg.getTable()
         dbg.close()
-        for entry in wordTable:
-            self.wflist.append(WFBD(entry.get('word'), entry.get('freq')))
 
+        removed = ['the', 'day', 'for', 'and', 'you']
+        found = []
+        for i in range(self.quantity):
+            temp = wordTable[0]
+            for entry in wordTable:
+                if entry.get('freq') > temp.get('freq') and entry not in found and entry.get('word') not in removed and len(entry.get('word')) > 2:
+                    temp = entry
+            self.wflist.append(WFBD(temp.get('word'), temp.get('freq')))
+            self.wflist[-1].addDates(temp.get('dates'))
+            found.append(temp)
+                
     def getFreqs(self):
-        dbg = dbgetter('trends')
-        trendTable = dbg.getTable()
-        dbg.close()
-
-        for wf in self.wflist:                                          #Cycle through every word and frequency in the list of words and frequencies
-            for entry in trendTable:                                    #Cycle through every trend and date in the map of trends and dates
-                trend = self.remove_punc(entry.get('trend').tolower())  #With the current trend,
-                dates = entry.get('dates')                              #and it's associated dates,
-                if wf.trend in trend:                                   #if the word we're looking at occurs in this trend,
-                    for date in dates:                                  #add all dates to the word's list of dates
-                        wf.addDate(date)
-
         return self.wflist
