@@ -8,12 +8,13 @@
 - [x] **selenium** for accessing the webpage and getting Trends
       (Yes, Selenium is absolutely overkill as a web scraper. Unfortunately, the website requires a button press to get the full set of data to load.)
 - [x] **PYDAL** for storing each trend with its date and frequency. Also, PYDAL makes it easy to find if an entry contains a substring. This will be useful for finding if a topic repeats frequently. E.g: "#TrumpKillsUSPS" is trending as of today (2020/08/12), but perhaps "Trump" or "USPS" are substrings of other trends that occur frequently.
-- [ ] **matplotlib/numpy** for moving the database of trends and dates into legible data, and plotting it according to its relevant statistic.
+- [x] **matplotlib/numpy** for moving the database of trends and dates into legible data, and plotting it according to its relevant statistic.
 
 	Things to plot:
 	- [x] Frequency of a word (word cloud)
 	- [x] How the use of hashtags has changed over time (line plot)
 	- [x] Frequency of a trend (bar graph)
 	- [x] Most popular day-of-the-week trends e.g 'ThrowbackThursday', etc. (multi-line plot)
-	- [ ] Top word frequencies and how recently they're used (multi-line plot)
+	- [x] Top word frequencies and how recently they're used (multi-line plot)
 
+This project is, while greatly imperfect, considered complete. The execution of all aspects of this program is not ideal, but all desired topics were covered and implemented. There are many things I would change given the opportunity to work on this a second time, though the result is satisfying. I may add another plot or two in order to track relevant topics (current political/social topics).
