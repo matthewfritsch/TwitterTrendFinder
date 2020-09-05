@@ -37,7 +37,8 @@ x_vals = getAllDates()
 x_vals = np.array(sorted(x_vals))
 fig_1 = plt.figure(figsize=(16,9), dpi=100)
 axes_1 = fig_1.add_axes([0.1, 0.1, 0.9, 0.9])
-#set labels here if desired
+axes_1.set_xlabel('Date')
+axes_1.set_ylabel('Total uses since Feb 2016')
 
 for w in wordfreqdates:
     x = 0
