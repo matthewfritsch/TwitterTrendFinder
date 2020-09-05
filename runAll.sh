@@ -11,5 +11,6 @@ python3 trendBreaker.py
 python3 wordsToCSV.py
 cd ..
 cp 3.\ TrendsToIdeas/words.csv 4.\ IdeaPlot/words.csv
+cd 4.\ IdeaPlot/
 python3 word_frequency.py && python3 hashtags.py && python3 trendfreq.py && python3 dotwTrends.py && python3 wordFreqByDate.py
 echo "All done!"
