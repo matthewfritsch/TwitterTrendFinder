@@ -17,4 +17,4 @@
 	- [x] Most popular day-of-the-week trends e.g 'ThrowbackThursday', etc. (multi-line plot)
 	- [x] Top word frequencies and how recently they're used (multi-line plot)
 
-This project is, while greatly imperfect, considered complete. The execution of all aspects of this program is not ideal, but all desired topics were covered and implemented. There are many things I would change given the opportunity to work on this a second time, though the result is satisfying. I may add another plot or two in order to track relevant topics (current political/social topics).
+**EDIT:** This project is, while greatly imperfect, considered complete. The execution of all aspects of this program is not ideal, but all desired topics were covered and implemented. There are many things I would change given the opportunity to work on this a second time, though the result is satisfying. I may add another plot or two in order to track relevant topics (current political/social topics).
