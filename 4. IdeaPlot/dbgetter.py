@@ -12,7 +12,7 @@ class dbgetter:
                 self.mydb = self.db.define_table('words', 
                     Field('word', 'string'), 
                     Field('freq', 'integer'), 
-                    Field('trends', 'list:string'))
+                    Field('dates', 'list:string'))
             else:
                 raise NameError("Your options from dbgetter are 'trends' or 'words'.")
         else:
